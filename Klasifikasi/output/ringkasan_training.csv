@@ -1,0 +1,10 @@
+Model,Skenario,Jumlah Fitur,Akurasi Training,Akurasi Testing,Prediksi Churn,Waktu Training (dtk)
+Naive Bayes,Semua Fitur,28,0.889475,0.8876,133,0.16
+Naive Bayes,Chi-Square,10,0.889825,0.888,125,0.04
+Naive Bayes,RFE,10,0.89855,0.8985,0,0.08
+SVM,Semua Fitur,28,0.89855,0.8985,0,756.36
+SVM,Chi-Square,10,0.89855,0.8985,0,36.91
+SVM,RFE,10,0.89855,0.8985,0,425.19
+Decision Tree,Semua Fitur,28,1.0,0.7993,1304,0.67
+Decision Tree,Chi-Square,10,0.931325,0.857,527,0.09
+Decision Tree,RFE,10,1.0,0.8069,1228,0.39

@@ -1,0 +1,35 @@
+{
+  "impute": {
+    "income": 44688.01,
+    "credit_score": 568.0,
+    "monthly_charges": 1193.13,
+    "gender": "Male",
+    "payment_method": "UPI"
+  },
+  "bounds": {
+    "age": [
+      -7.0,
+      89.0
+    ],
+    "tenure_months": [
+      -58.5,
+      177.5
+    ],
+    "income": [
+      5939.275000000009,
+      83187.75499999999
+    ],
+    "credit_score": [
+      45.0,
+      1093.0
+    ],
+    "monthly_charges": [
+      -17.55624999999975,
+      2411.79375
+    ],
+    "avg_session_time": [
+      1.400000000000004,
+      34.67999999999999
+    ]
+  }
+}

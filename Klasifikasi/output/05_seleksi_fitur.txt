@@ -1,0 +1,73 @@
+============================================================
+TAHAP 5 - SELEKSI FITUR (memilih 10 dari 28 fitur)
+============================================================
+
+[Metode 1] CHI-SQUARE (SelectKBest, k=10)
+                        fitur  skor_chi2  p_value  terpilih
+1               late_payments    49.6639   0.0000      True
+2             device_type_Web    18.2290   0.0000      True
+3               tenure_months    16.6463   0.0000      True
+4             support_tickets    13.6576   0.0002      True
+5       has_international_Yes     7.7817   0.0053      True
+6         device_type_Android     5.8165   0.0159      True
+7           plan_type_Premium     4.6215   0.0316      True
+8                gender_Other     4.4936   0.0340      True
+9                 gender_Male     4.3007   0.0381      True
+10            plan_type_Basic     4.0272   0.0448      True
+11               credit_score     3.9281   0.0475     False
+12              gender_Female     3.8398   0.0500     False
+13       has_international_No     2.1073   0.1466     False
+14        payment_method_Card     1.9520   0.1624     False
+15         payment_method_COD     1.7239   0.1892     False
+16            monthly_charges     1.4676   0.2257     False
+17  payment_method_NetBanking     1.4241   0.2327     False
+18            device_type_iOS     1.3226   0.2501     False
+19             is_student_Yes     1.0147   0.3138     False
+20            city_tier_Tier1     0.7161   0.3974     False
+21         plan_type_Standard     0.5738   0.4488     False
+22                     income     0.3958   0.5293     False
+23           avg_session_time     0.3953   0.5295     False
+24            city_tier_Tier2     0.3878   0.5335     False
+25                        age     0.1744   0.6762     False
+26              is_student_No     0.1390   0.7093     False
+27         payment_method_UPI     0.0809   0.7761     False
+28            city_tier_Tier3     0.0002   0.9881     False
+
+Fitur terpilih Chi-Square: ['late_payments', 'device_type_Web', 'tenure_months', 'support_tickets', 'has_international_Yes', 'device_type_Android', 'plan_type_Premium', 'gender_Other', 'gender_Male', 'plan_type_Basic']
+
+[Metode 2] RFE (Recursive Feature Elimination) + Decision Tree, n_features=10
+                        fitur  ranking_RFE  terpilih
+1                         age            1      True
+2               tenure_months            1      True
+3                      income            1      True
+4                credit_score            1      True
+5             monthly_charges            1      True
+6             support_tickets            1      True
+7            avg_session_time            1      True
+8               gender_Female            1      True
+9             city_tier_Tier2            1      True
+10         payment_method_UPI            1      True
+11            plan_type_Basic            2     False
+12        payment_method_Card            3     False
+13              is_student_No            4     False
+14            city_tier_Tier1            5     False
+15         plan_type_Standard            6     False
+16            device_type_iOS            7     False
+17            city_tier_Tier3            8     False
+18      has_international_Yes            9     False
+19  payment_method_NetBanking           10     False
+20                gender_Male           11     False
+21          plan_type_Premium           12     False
+22            device_type_Web           13     False
+23              late_payments           14     False
+24        device_type_Android           15     False
+25         payment_method_COD           16     False
+26             is_student_Yes           17     False
+27       has_international_No           18     False
+28               gender_Other           19     False
+
+Fitur terpilih RFE: ['age', 'tenure_months', 'income', 'credit_score', 'monthly_charges', 'support_tickets', 'avg_session_time', 'gender_Female', 'city_tier_Tier2', 'payment_method_UPI']
+
+Fitur yang dipilih KEDUA metode (2): ['support_tickets', 'tenure_months']
+
+Tersimpan: output/X_train_chi2.csv, X_test_chi2.csv, X_train_rfe.csv, X_test_rfe.csv, fitur_terpilih.csv

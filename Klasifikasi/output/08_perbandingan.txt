@@ -1,0 +1,42 @@
+============================================================
+TAHAP 8 - PERBANDINGAN KINERJA MODEL
+============================================================
+        Model    Skenario  Accuracy  Precision  Recall  F1-Score
+  Naive Bayes Semua Fitur    0.8876     0.0902  0.0118    0.0209
+  Naive Bayes  Chi-Square    0.8880     0.0800  0.0099    0.0175
+  Naive Bayes         RFE    0.8985     0.0000  0.0000    0.0000
+          SVM Semua Fitur    0.8985     0.0000  0.0000    0.0000
+          SVM  Chi-Square    0.8985     0.0000  0.0000    0.0000
+          SVM         RFE    0.8985     0.0000  0.0000    0.0000
+Decision Tree Semua Fitur    0.7993     0.1196  0.1537    0.1345
+Decision Tree  Chi-Square    0.8570     0.1063  0.0552    0.0726
+Decision Tree         RFE    0.8069     0.1270  0.1537    0.1391
+
+Peringkat berdasarkan Accuracy:
+      Model    Skenario  Accuracy
+Naive Bayes         RFE    0.8985
+        SVM  Chi-Square    0.8985
+        SVM Semua Fitur    0.8985
+        SVM         RFE    0.8985
+Naive Bayes  Chi-Square    0.8880
+
+Peringkat berdasarkan F1-Score:
+        Model    Skenario  F1-Score
+Decision Tree         RFE    0.1391
+Decision Tree Semua Fitur    0.1345
+Decision Tree  Chi-Square    0.0726
+  Naive Bayes Semua Fitur    0.0209
+  Naive Bayes  Chi-Square    0.0175
+
+Kombinasi dengan accuracy tertinggi (0.8985) ada 4:
+      Model    Skenario  Accuracy  Recall  F1-Score
+Naive Bayes         RFE    0.8985     0.0       0.0
+        SVM Semua Fitur    0.8985     0.0       0.0
+        SVM  Chi-Square    0.8985     0.0       0.0
+        SVM         RFE    0.8985     0.0       0.0
+Jumlah data yang diprediksi churn oleh kombinasi tersebut: [0, 0, 0, 0]
+
+Model untuk UI (accuracy tertinggi): Naive Bayes - RFE (accuracy 0.8985, F1 0.0000)
+F1-Score tertinggi (pembanding)    : Decision Tree - RFE (F1 0.1391, accuracy 0.8069)
+Model untuk UI disimpan di output/model_terpilih.json
+Tersimpan: figures/perbandingan_model.png

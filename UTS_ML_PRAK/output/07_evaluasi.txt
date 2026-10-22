@@ -1,0 +1,79 @@
+============================================================
+TAHAP 7 - EVALUASI (kelas positif = 1 / churn)
+============================================================
+
+[Semua Fitur]
+Confusion Matrix (baris = aktual, kolom = prediksi):
+          Prediksi 0  Prediksi 1
+Aktual 0        7837        1148
+Aktual 1         859         156
+TN=7837  FP=1148  FN=859  TP=156
+Akurasi  = (TP+TN)/Total = (156+7837)/10000 = 0.7993
+Presisi  = TP/(TP+FP)    = 156/(156+1148) = 0.1196
+Recall   = TP/(TP+FN)    = 156/(156+859) = 0.1537
+F1-Score = 2*P*R/(P+R)   = 0.1345
+
+Classification report:
+                 precision    recall  f1-score   support
+
+Tidak Churn (0)     0.9012    0.8722    0.8865      8985
+      Churn (1)     0.1196    0.1537    0.1345      1015
+
+       accuracy                         0.7993     10000
+      macro avg     0.5104    0.5130    0.5105     10000
+   weighted avg     0.8219    0.7993    0.8102     10000
+
+
+[Chi-Square]
+Confusion Matrix (baris = aktual, kolom = prediksi):
+          Prediksi 0  Prediksi 1
+Aktual 0        8514         471
+Aktual 1         959          56
+TN=8514  FP=471  FN=959  TP=56
+Akurasi  = (TP+TN)/Total = (56+8514)/10000 = 0.8570
+Presisi  = TP/(TP+FP)    = 56/(56+471) = 0.1063
+Recall   = TP/(TP+FN)    = 56/(56+959) = 0.0552
+F1-Score = 2*P*R/(P+R)   = 0.0726
+
+Classification report:
+                 precision    recall  f1-score   support
+
+Tidak Churn (0)     0.8988    0.9476    0.9225      8985
+      Churn (1)     0.1063    0.0552    0.0726      1015
+
+       accuracy                         0.8570     10000
+      macro avg     0.5025    0.5014    0.4976     10000
+   weighted avg     0.8183    0.8570    0.8363     10000
+
+
+[RFE]
+Confusion Matrix (baris = aktual, kolom = prediksi):
+          Prediksi 0  Prediksi 1
+Aktual 0        7913        1072
+Aktual 1         859         156
+TN=7913  FP=1072  FN=859  TP=156
+Akurasi  = (TP+TN)/Total = (156+7913)/10000 = 0.8069
+Presisi  = TP/(TP+FP)    = 156/(156+1072) = 0.1270
+Recall   = TP/(TP+FN)    = 156/(156+859) = 0.1537
+F1-Score = 2*P*R/(P+R)   = 0.1391
+
+Classification report:
+                 precision    recall  f1-score   support
+
+Tidak Churn (0)     0.9021    0.8807    0.8913      8985
+      Churn (1)     0.1270    0.1537    0.1391      1015
+
+       accuracy                         0.8069     10000
+      macro avg     0.5146    0.5172    0.5152     10000
+   weighted avg     0.8234    0.8069    0.8149     10000
+
+
+============================================================
+PERBANDINGAN KINERJA
+============================================================
+   Skenario   TN   FP  FN  TP  Akurasi  Presisi  Recall  F1-Score
+Semua Fitur 7837 1148 859 156   0.7993   0.1196  0.1537    0.1345
+ Chi-Square 8514  471 959  56   0.8570   0.1063  0.0552    0.0726
+        RFE 7913 1072 859 156   0.8069   0.1270  0.1537    0.1391
+
+Tersimpan: output/hasil_evaluasi.csv, figures/05_confusion_matrix.png, figures/06_perbandingan_metrik.png

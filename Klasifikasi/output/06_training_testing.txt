@@ -1,0 +1,20 @@
+============================================================
+TAHAP 6 - TRAINING & TESTING (Naive Bayes, SVM, Decision Tree)
+============================================================
+
+######## Naive Bayes ########
+[Semua Fitur] fitur=28 | akurasi training=0.8895 | akurasi testing=0.8876 | prediksi churn= 133/10000 | waktu training=0.02 dtk
+[Chi-Square ] fitur=10 | akurasi training=0.8898 | akurasi testing=0.8880 | prediksi churn= 125/10000 | waktu training=0.01 dtk
+[RFE        ] fitur=10 | akurasi training=0.8985 | akurasi testing=0.8985 | prediksi churn=   0/10000 | waktu training=0.01 dtk
+
+######## SVM ########
+[Semua Fitur] fitur=28 | akurasi training=0.8985 | akurasi testing=0.8985 | prediksi churn=   0/10000 | waktu training=231.88 dtk
+[Chi-Square ] fitur=10 | akurasi training=0.8985 | akurasi testing=0.8985 | prediksi churn=   0/10000 | waktu training=16.65 dtk
+[RFE        ] fitur=10 | akurasi training=0.8985 | akurasi testing=0.8985 | prediksi churn=   0/10000 | waktu training=206.02 dtk
+
+######## Decision Tree ########
+[Semua Fitur] fitur=28 | akurasi training=1.0000 | akurasi testing=0.7993 | prediksi churn=1304/10000 | waktu training=0.48 dtk
+[Chi-Square ] fitur=10 | akurasi training=0.9313 | akurasi testing=0.8570 | prediksi churn= 527/10000 | waktu training=0.08 dtk
+[RFE        ] fitur=10 | akurasi training=1.0000 | akurasi testing=0.8069 | prediksi churn=1228/10000 | waktu training=0.39 dtk
+
+Tersimpan: output/prediksi_testing.csv, ringkasan_training.csv, dan model_*.joblib

@@ -1,0 +1,33 @@
+============================================================
+TAHAP 4 - TRANSFORMASI (Min-Max + One-Hot Encoding)
+============================================================
+Kolom numerik     -> Min-Max Scaling : ['age', 'tenure_months', 'income', 'credit_score', 'monthly_charges', 'support_tickets', 'avg_session_time', 'late_payments']
+Kolom kategorikal -> One-Hot Encoding: ['gender', 'city_tier', 'plan_type', 'payment_method', 'device_type', 'has_international', 'is_student']
+
+Jumlah fitur sebelum transformasi: 15
+Jumlah fitur sesudah transformasi: 28
+
+Contoh data training SEBELUM (kolom numerik):
+   age  tenure_months    income  credit_score  monthly_charges  support_tickets  avg_session_time  late_payments
+0   37              4  65167.94         636.0           443.55                0             22.52              1
+1   37             67  54518.23         447.0          1574.90                0             23.94              0
+2   59             62  51861.52         504.0           780.15                0             15.97              1
+
+Contoh data training SESUDAH Min-Max (rentang 0-1):
+      age  tenure_months  income  credit_score  monthly_charges  support_tickets  avg_session_time  late_payments
+0  0.4043         0.0333  0.7603        0.6102           0.1101              0.0            0.6279         0.3333
+1  0.4043         0.5583  0.6187        0.2659           0.6216              0.0            0.6714         0.0000
+2  0.8723         0.5167  0.5834        0.3698           0.2623              0.0            0.4275         0.3333
+
+Nilai min/max kolom numerik data training (harus 0 dan 1):
+     age  tenure_months  income  credit_score  monthly_charges  support_tickets  avg_session_time  late_payments
+min  0.0            0.0     0.0           0.0              0.0              0.0               0.0            0.0
+max  1.0            1.0     1.0           1.0              1.0              1.0               1.0            1.0
+
+Contoh hasil One-Hot Encoding:
+   gender_Female  gender_Male  gender_Other  city_tier_Tier1  city_tier_Tier2  city_tier_Tier3  plan_type_Basic  plan_type_Premium  plan_type_Standard  payment_method_COD  payment_method_Card  payment_method_NetBanking  payment_method_UPI  device_type_Android  device_type_Web  device_type_iOS  has_international_No  has_international_Yes  is_student_No  is_student_Yes
+0              0            1             0                0                0                1                0                  1                   0                   1                    0                          0                   0                    0                1                0                     1                      0              1               0
+1              0            1             0                0                0                1                0                  0                   1                   0                    1                          0                   0                    1                0                0                     1                      0              1               0
+2              1            0             0                1                0                0                0                  0                   1                   0                    0                          0                   1                    1                0                0                     1                      0              1               0
+
+Tersimpan: output/X_train_trans.csv, X_test_trans.csv

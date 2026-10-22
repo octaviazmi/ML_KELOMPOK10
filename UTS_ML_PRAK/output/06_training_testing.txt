@@ -1,0 +1,29 @@
+============================================================
+TAHAP 6 - TRAINING & TESTING (Decision Tree)
+============================================================
+
+[Semua Fitur]
+  Jumlah fitur        : 28
+  Kedalaman pohon     : 42
+  Jumlah daun         : 4953
+  Akurasi training    : 1.0000
+  Akurasi testing     : 0.7993
+  Prediksi churn (1)  : 1304 dari 10000 data testing
+
+[Chi-Square]
+  Jumlah fitur        : 10
+  Kedalaman pohon     : 29
+  Jumlah daun         : 7315
+  Akurasi training    : 0.9313
+  Akurasi testing     : 0.8570
+  Prediksi churn (1)  : 527 dari 10000 data testing
+
+[RFE]
+  Jumlah fitur        : 10
+  Kedalaman pohon     : 40
+  Jumlah daun         : 5088
+  Akurasi training    : 1.0000
+  Akurasi testing     : 0.8069
+  Prediksi churn (1)  : 1228 dari 10000 data testing
+
+Tersimpan: output/prediksi_testing.csv dan model_*.joblib

@@ -1,0 +1,110 @@
+============================================================
+TAHAP 7 - EVALUASI (kelas positif = 1 / churn)
+============================================================
+
+######## Naive Bayes ########
+
+[Naive Bayes - Semua Fitur]
+Confusion Matrix (baris = aktual, kolom = prediksi):
+          Prediksi 0  Prediksi 1
+Aktual 0        8864         121
+Aktual 1        1003          12
+TN=8864  FP=121  FN=1003  TP=12
+Accuracy  = 0.8876
+Precision = 0.0902
+Recall    = 0.0118
+F1-Score  = 0.0209
+
+[Naive Bayes - Chi-Square]
+Confusion Matrix (baris = aktual, kolom = prediksi):
+          Prediksi 0  Prediksi 1
+Aktual 0        8870         115
+Aktual 1        1005          10
+TN=8870  FP=115  FN=1005  TP=10
+Accuracy  = 0.8880
+Precision = 0.0800
+Recall    = 0.0099
+F1-Score  = 0.0175
+
+[Naive Bayes - RFE]
+Confusion Matrix (baris = aktual, kolom = prediksi):
+          Prediksi 0  Prediksi 1
+Aktual 0        8985           0
+Aktual 1        1015           0
+TN=8985  FP=0  FN=1015  TP=0
+Accuracy  = 0.8985
+Precision = 0.0000
+Recall    = 0.0000
+F1-Score  = 0.0000
+
+######## SVM ########
+
+[SVM - Semua Fitur]
+Confusion Matrix (baris = aktual, kolom = prediksi):
+          Prediksi 0  Prediksi 1
+Aktual 0        8985           0
+Aktual 1        1015           0
+TN=8985  FP=0  FN=1015  TP=0
+Accuracy  = 0.8985
+Precision = 0.0000
+Recall    = 0.0000
+F1-Score  = 0.0000
+
+[SVM - Chi-Square]
+Confusion Matrix (baris = aktual, kolom = prediksi):
+          Prediksi 0  Prediksi 1
+Aktual 0        8985           0
+Aktual 1        1015           0
+TN=8985  FP=0  FN=1015  TP=0
+Accuracy  = 0.8985
+Precision = 0.0000
+Recall    = 0.0000
+F1-Score  = 0.0000
+
+[SVM - RFE]
+Confusion Matrix (baris = aktual, kolom = prediksi):
+          Prediksi 0  Prediksi 1
+Aktual 0        8985           0
+Aktual 1        1015           0
+TN=8985  FP=0  FN=1015  TP=0
+Accuracy  = 0.8985
+Precision = 0.0000
+Recall    = 0.0000
+F1-Score  = 0.0000
+
+######## Decision Tree ########
+
+[Decision Tree - Semua Fitur]
+Confusion Matrix (baris = aktual, kolom = prediksi):
+          Prediksi 0  Prediksi 1
+Aktual 0        7837        1148
+Aktual 1         859         156
+TN=7837  FP=1148  FN=859  TP=156
+Accuracy  = 0.7993
+Precision = 0.1196
+Recall    = 0.1537
+F1-Score  = 0.1345
+
+[Decision Tree - Chi-Square]
+Confusion Matrix (baris = aktual, kolom = prediksi):
+          Prediksi 0  Prediksi 1
+Aktual 0        8514         471
+Aktual 1         959          56
+TN=8514  FP=471  FN=959  TP=56
+Accuracy  = 0.8570
+Precision = 0.1063
+Recall    = 0.0552
+F1-Score  = 0.0726
+
+[Decision Tree - RFE]
+Confusion Matrix (baris = aktual, kolom = prediksi):
+          Prediksi 0  Prediksi 1
+Aktual 0        7913        1072
+Aktual 1         859         156
+TN=7913  FP=1072  FN=859  TP=156
+Accuracy  = 0.8069
+Precision = 0.1270
+Recall    = 0.1537
+F1-Score  = 0.1391
+
+Tersimpan: output/hasil_evaluasi.csv dan figures/cm_*.png

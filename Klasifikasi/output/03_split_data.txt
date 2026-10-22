@@ -1,0 +1,14 @@
+============================================================
+TAHAP 3 - SPLIT DATA (80% : 20%)
+============================================================
+Total data   : 50000
+Data training: 40000 (80%)
+Data testing : 10000 (20%)
+
+Proporsi kelas churn (stratified, menjaga rasio kelas):
+       training (%)  testing (%)
+churn                           
+0             89.85        89.85
+1             10.14        10.15
+
+Tersimpan: output/X_train_raw.csv, X_test_raw.csv, y_train.csv, y_test.csv

@@ -1,0 +1,220 @@
+============================================================
+TAHAP 1 - INPUT DATA
+============================================================
+Jumlah baris  : 50000
+Jumlah kolom  : 18
+
+5 data teratas:
+   customer_id  age  tenure_months    income  credit_score  monthly_charges  support_tickets  avg_session_time  late_payments  gender city_tier plan_type payment_method device_type has_international is_student  target_reg  churn
+0       200001   51              6  23039.19         718.0          1065.30                0             28.36              0  Female     Tier1     Basic            UPI     Android                No         No    44030.77      0
+1       200002   46            116  54173.02         491.0          1035.67                1             15.75              0    Male     Tier2     Basic           Card     Android                No         No   138673.42      0
+2       200003   20            112  37130.61         623.0           897.50                1             15.15              0  Female     Tier1  Standard           Card     Android                No         No   159250.49      0
+3       200004   18             53  39873.95         850.0          1095.42                3             26.83              0    Male     Tier1  Standard            UPI     Android                No         No   109410.17      1
+4       200005   22             60  39591.09         779.0          1422.29                0             18.83              0    Male     Tier2   Premium           Card     Android                No         No    91008.23      0
+
+Tipe data tiap kolom:
+customer_id            int64
+age                    int64
+tenure_months          int64
+income               float64
+credit_score         float64
+monthly_charges      float64
+support_tickets        int64
+avg_session_time     float64
+late_payments          int64
+gender                   str
+city_tier                str
+plan_type                str
+payment_method           str
+device_type              str
+has_international        str
+is_student               str
+target_reg           float64
+churn                  int64
+
+Atribut kategorikal (7): ['gender', 'city_tier', 'plan_type', 'payment_method', 'device_type', 'has_international', 'is_student']
+Atribut numerik     (11): ['customer_id', 'age', 'tenure_months', 'income', 'credit_score', 'monthly_charges', 'support_tickets', 'avg_session_time', 'late_payments', 'target_reg', 'churn']
+
+Distribusi target (churn):
+       jumlah  persen (%)
+churn                    
+0       44927       89.85
+1        5073       10.15
+
+Statistik deskriptif (numerik):
+                    count       mean       std       min        25%        50%        75%        max
+customer_id       50000.0  225000.50  14433.90  200001.0  212500.75  225000.50  237500.25  250000.00
+age               50000.0      41.22     13.82      18.0      29.00      41.00      53.00      65.00
+tenure_months     50000.0      59.21     34.98       0.0      30.00      59.00      89.00     120.00
+income            49305.0   44802.60  14951.34    8000.0   34744.27   44688.01   54330.26   92535.91
+credit_score      49183.0     570.41    159.03     301.0     436.00     568.00     704.00     850.00
+monthly_charges   49171.0    1196.45    452.23     200.0     887.34    1193.13    1509.64    2595.86
+support_tickets   50000.0       1.18      1.09       0.0       0.00       1.00       2.00       5.00
+avg_session_time  50000.0      18.02      6.05       2.0      13.88      18.09      22.20      36.53
+late_payments     50000.0       0.26      0.51       0.0       0.00       0.00       0.00       3.00
+target_reg        50000.0  100797.27  30929.99   34162.2   75384.93  100444.03  125777.31  170630.47
+churn             50000.0       0.10      0.30       0.0       0.00       0.00       0.00       1.00
+============================================================
+TAHAP 2 - PREPROCESSING
+============================================================
+
+[2.1] Drop kolom tidak relevan: ['customer_id', 'target_reg']
+      Bentuk data setelah drop kolom: (50000, 16)
+
+[2.2] DETEKSI MISSING VALUE
+                 jumlah_missing  persen (%)
+income                      695        1.39
+credit_score                817        1.63
+monthly_charges             829        1.66
+gender                      800        1.60
+payment_method              813        1.63
+Total sel kosong: 3954
+
+      HANDLING: numerik diisi MEDIAN, kategorikal diisi MODUS
+      - income          : diisi median = 44688.01
+      - credit_score    : diisi median = 568.00
+      - monthly_charges : diisi median = 1193.13
+      - gender          : diisi modus  = Male
+      - payment_method  : diisi modus  = UPI
+      Total missing value setelah handling: 0
+
+[2.3] DETEKSI DUPLIKASI DATA
+      Jumlah baris duplikat: 0
+      HANDLING: tidak diperlukan (tidak ada duplikat)
+
+[2.4] DETEKSI OUTLIER (metode IQR: Q1-1.5*IQR s/d Q3+1.5*IQR)
+           kolom  batas_bawah  batas_atas  jumlah_outlier  persen (%)
+             age        -7.00       89.00               0        0.00
+   tenure_months       -58.50      177.50               0        0.00
+          income      5939.28    83187.75             376        0.75
+    credit_score        45.00     1093.00               0        0.00
+ monthly_charges       -17.56     2411.79             241        0.48
+ support_tickets        -3.00        5.00               0        0.00
+avg_session_time         1.40       34.68             221        0.44
+   late_payments         0.00        0.00           11299       22.60
+
+      Kolom diskrit (tidak di-capping): ['support_tickets', 'late_payments']
+      HANDLING: capping nilai outlier ke batas atas/bawah IQR (data tidak dibuang)
+      Sisa outlier pada kolom kontinu setelah capping: 0
+
+Data bersih disimpan: output/data_preprocessed.csv  (bentuk (50000, 16))
+============================================================
+TAHAP 3 - SPLIT DATA (80% : 20%)
+============================================================
+Total data   : 50000
+Data training: 40000 (80%)
+Data testing : 10000 (20%)
+
+Proporsi kelas churn (stratified, menjaga rasio kelas):
+       training (%)  testing (%)
+churn                           
+0             89.85        89.85
+1             10.14        10.15
+
+Tersimpan: output/X_train_raw.csv, X_test_raw.csv, y_train.csv, y_test.csv
+============================================================
+TAHAP 4 - TRANSFORMASI (Min-Max + One-Hot Encoding)
+============================================================
+Kolom numerik     -> Min-Max Scaling : ['age', 'tenure_months', 'income', 'credit_score', 'monthly_charges', 'support_tickets', 'avg_session_time', 'late_payments']
+Kolom kategorikal -> One-Hot Encoding: ['gender', 'city_tier', 'plan_type', 'payment_method', 'device_type', 'has_international', 'is_student']
+
+Jumlah fitur sebelum transformasi: 15
+Jumlah fitur sesudah transformasi: 28
+
+Contoh data training SEBELUM (kolom numerik):
+   age  tenure_months    income  credit_score  monthly_charges  support_tickets  avg_session_time  late_payments
+0   37              4  65167.94         636.0           443.55                0             22.52              1
+1   37             67  54518.23         447.0          1574.90                0             23.94              0
+2   59             62  51861.52         504.0           780.15                0             15.97              1
+
+Contoh data training SESUDAH Min-Max (rentang 0-1):
+      age  tenure_months  income  credit_score  monthly_charges  support_tickets  avg_session_time  late_payments
+0  0.4043         0.0333  0.7603        0.6102           0.1101              0.0            0.6279         0.3333
+1  0.4043         0.5583  0.6187        0.2659           0.6216              0.0            0.6714         0.0000
+2  0.8723         0.5167  0.5834        0.3698           0.2623              0.0            0.4275         0.3333
+
+Nilai min/max kolom numerik data training (harus 0 dan 1):
+     age  tenure_months  income  credit_score  monthly_charges  support_tickets  avg_session_time  late_payments
+min  0.0            0.0     0.0           0.0              0.0              0.0               0.0            0.0
+max  1.0            1.0     1.0           1.0              1.0              1.0               1.0            1.0
+
+Contoh hasil One-Hot Encoding:
+   gender_Female  gender_Male  gender_Other  city_tier_Tier1  city_tier_Tier2  city_tier_Tier3  plan_type_Basic  plan_type_Premium  plan_type_Standard  payment_method_COD  payment_method_Card  payment_method_NetBanking  payment_method_UPI  device_type_Android  device_type_Web  device_type_iOS  has_international_No  has_international_Yes  is_student_No  is_student_Yes
+0              0            1             0                0                0                1                0                  1                   0                   1                    0                          0                   0                    0                1                0                     1                      0              1               0
+1              0            1             0                0                0                1                0                  0                   1                   0                    1                          0                   0                    1                0                0                     1                      0              1               0
+2              1            0             0                1                0                0                0                  0                   1                   0                    0                          0                   1                    1                0                0                     1                      0              1               0
+
+Tersimpan: output/X_train_trans.csv, X_test_trans.csv
+============================================================
+TAHAP 5 - SELEKSI FITUR (memilih 10 dari 28 fitur)
+============================================================
+
+[Metode 1] CHI-SQUARE (SelectKBest, k=10)
+                        fitur  skor_chi2  p_value  terpilih
+1               late_payments    49.6639   0.0000      True
+2             device_type_Web    18.2290   0.0000      True
+3               tenure_months    16.6463   0.0000      True
+4             support_tickets    13.6576   0.0002      True
+5       has_international_Yes     7.7817   0.0053      True
+6         device_type_Android     5.8165   0.0159      True
+7           plan_type_Premium     4.6215   0.0316      True
+8                gender_Other     4.4936   0.0340      True
+9                 gender_Male     4.3007   0.0381      True
+10            plan_type_Basic     4.0272   0.0448      True
+11               credit_score     3.9281   0.0475     False
+12              gender_Female     3.8398   0.0500     False
+13       has_international_No     2.1073   0.1466     False
+14        payment_method_Card     1.9520   0.1624     False
+15         payment_method_COD     1.7239   0.1892     False
+16            monthly_charges     1.4676   0.2257     False
+17  payment_method_NetBanking     1.4241   0.2327     False
+18            device_type_iOS     1.3226   0.2501     False
+19             is_student_Yes     1.0147   0.3138     False
+20            city_tier_Tier1     0.7161   0.3974     False
+21         plan_type_Standard     0.5738   0.4488     False
+22                     income     0.3958   0.5293     False
+23           avg_session_time     0.3953   0.5295     False
+24            city_tier_Tier2     0.3878   0.5335     False
+25                        age     0.1744   0.6762     False
+26              is_student_No     0.1390   0.7093     False
+27         payment_method_UPI     0.0809   0.7761     False
+28            city_tier_Tier3     0.0002   0.9881     False
+
+Fitur terpilih Chi-Square: ['late_payments', 'device_type_Web', 'tenure_months', 'support_tickets', 'has_international_Yes', 'device_type_Android', 'plan_type_Premium', 'gender_Other', 'gender_Male', 'plan_type_Basic']
+
+[Metode 2] RFE (Recursive Feature Elimination) + Decision Tree, n_features=10
+                        fitur  ranking_RFE  terpilih
+1                         age            1      True
+2               tenure_months            1      True
+3                      income            1      True
+4                credit_score            1      True
+5             monthly_charges            1      True
+6             support_tickets            1      True
+7            avg_session_time            1      True
+8               gender_Female            1      True
+9             city_tier_Tier2            1      True
+10         payment_method_UPI            1      True
+11            plan_type_Basic            2     False
+12        payment_method_Card            3     False
+13              is_student_No            4     False
+14            city_tier_Tier1            5     False
+15         plan_type_Standard            6     False
+16            device_type_iOS            7     False
+17            city_tier_Tier3            8     False
+18      has_international_Yes            9     False
+19  payment_method_NetBanking           10     False
+20                gender_Male           11     False
+21          plan_type_Premium           12     False
+22            device_type_Web           13     False
+23              late_payments           14     False
+24        device_type_Android           15     False
+25         payment_method_COD           16     False
+26             is_student_Yes           17     False
+27       has_international_No           18     False
+28               gender_Other           19     False
+
+Fitur terpilih RFE: ['age', 'tenure_months', 'income', 'credit_score', 'monthly_charges', 'support_tickets', 'avg_session_time', 'gender_Female', 'city_tier_Tier2', 'payment_method_UPI']
+
+Fitur yang dipilih KEDUA metode (2): ['support_tickets', 'tenure_months']
+
+Tersimpan: output/X_train_chi2.csv, X_test_chi2.csv, X_train_rfe.csv, X_test_rfe.csv, fitur_terpilih.csv

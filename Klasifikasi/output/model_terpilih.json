@@ -1,0 +1,10 @@
+{
+  "model": "Naive Bayes",
+  "skenario": "RFE",
+  "suffix": "rfe",
+  "file": "model_Naive_Bayes_rfe.joblib",
+  "accuracy": 0.8985,
+  "precision": 0.0,
+  "recall": 0.0,
+  "f1": 0.0
+}

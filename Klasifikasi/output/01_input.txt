@@ -1,0 +1,56 @@
+============================================================
+TAHAP 1 - INPUT DATA
+============================================================
+Jumlah baris  : 50000
+Jumlah kolom  : 18
+
+5 data teratas:
+   customer_id  age  tenure_months    income  credit_score  monthly_charges  support_tickets  avg_session_time  late_payments  gender city_tier plan_type payment_method device_type has_international is_student  target_reg  churn
+0       200001   51              6  23039.19         718.0          1065.30                0             28.36              0  Female     Tier1     Basic            UPI     Android                No         No    44030.77      0
+1       200002   46            116  54173.02         491.0          1035.67                1             15.75              0    Male     Tier2     Basic           Card     Android                No         No   138673.42      0
+2       200003   20            112  37130.61         623.0           897.50                1             15.15              0  Female     Tier1  Standard           Card     Android                No         No   159250.49      0
+3       200004   18             53  39873.95         850.0          1095.42                3             26.83              0    Male     Tier1  Standard            UPI     Android                No         No   109410.17      1
+4       200005   22             60  39591.09         779.0          1422.29                0             18.83              0    Male     Tier2   Premium           Card     Android                No         No    91008.23      0
+
+Tipe data tiap kolom:
+customer_id            int64
+age                    int64
+tenure_months          int64
+income               float64
+credit_score         float64
+monthly_charges      float64
+support_tickets        int64
+avg_session_time     float64
+late_payments          int64
+gender                   str
+city_tier                str
+plan_type                str
+payment_method           str
+device_type              str
+has_international        str
+is_student               str
+target_reg           float64
+churn                  int64
+
+Atribut kategorikal (7): ['gender', 'city_tier', 'plan_type', 'payment_method', 'device_type', 'has_international', 'is_student']
+Atribut numerik     (11): ['customer_id', 'age', 'tenure_months', 'income', 'credit_score', 'monthly_charges', 'support_tickets', 'avg_session_time', 'late_payments', 'target_reg', 'churn']
+
+Distribusi target (churn):
+       jumlah  persen (%)
+churn                    
+0       44927       89.85
+1        5073       10.15
+
+Statistik deskriptif (numerik):
+                    count       mean       std       min        25%        50%        75%        max
+customer_id       50000.0  225000.50  14433.90  200001.0  212500.75  225000.50  237500.25  250000.00
+age               50000.0      41.22     13.82      18.0      29.00      41.00      53.00      65.00
+tenure_months     50000.0      59.21     34.98       0.0      30.00      59.00      89.00     120.00
+income            49305.0   44802.60  14951.34    8000.0   34744.27   44688.01   54330.26   92535.91
+credit_score      49183.0     570.41    159.03     301.0     436.00     568.00     704.00     850.00
+monthly_charges   49171.0    1196.45    452.23     200.0     887.34    1193.13    1509.64    2595.86
+support_tickets   50000.0       1.18      1.09       0.0       0.00       1.00       2.00       5.00
+avg_session_time  50000.0      18.02      6.05       2.0      13.88      18.09      22.20      36.53
+late_payments     50000.0       0.26      0.51       0.0       0.00       0.00       0.00       3.00
+target_reg        50000.0  100797.27  30929.99   34162.2   75384.93  100444.03  125777.31  170630.47
+churn             50000.0       0.10      0.30       0.0       0.00       0.00       0.00       1.00
