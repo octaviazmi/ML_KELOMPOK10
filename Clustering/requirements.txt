@@ -1,0 +1,14 @@
+# Dependensi project Clustering (Machine Learning Practicum - Modul 13)
+# Install dengan: pip install -r requirements.txt
+
+# --- EDA (Anggota 1) ---
+pandas
+numpy
+matplotlib
+seaborn
+
+# --- K-Modes (Anggota 1) ---
+kmodes
+
+# --- K-Means (Anggota 2): KMeans, StandardScaler, silhouette_score ---
+scikit-learn

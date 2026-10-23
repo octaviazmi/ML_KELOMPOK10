@@ -1,0 +1,5 @@
+Cluster,Jumlah,Education,Marital_Status,AcceptedCmp1,AcceptedCmp2,AcceptedCmp3,AcceptedCmp4,AcceptedCmp5,Complain,Response,Kidhome,Teenhome
+0,975,Graduation (50%),Married (68%),0 (92%),0 (99%),0 (94%),0 (90%),0 (91%),0 (99%),0 (86%),0 (82%),1 (63%)
+1,381,Graduation (49%),Together (65%),0 (99%),0 (99%),0 (93%),0 (98%),0 (100%),0 (99%),0 (88%),1 (97%),1 (63%)
+2,331,Graduation (49%),Together (100%),0 (91%),0 (97%),0 (94%),0 (89%),0 (87%),0 (99%),0 (89%),0 (100%),1 (51%)
+3,553,Graduation (52%),Single (55%),0 (94%),0 (99%),0 (90%),0 (95%),0 (94%),0 (99%),0 (78%),1 (69%),0 (99%)
