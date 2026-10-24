@@ -1,0 +1,3 @@
+Metode,Jenis fitur,Jumlah fitur,Jumlah cluster,Metrik utama,Nilai metrik
+K-Modes,Kategorikal,11,4,Cost,3859.0
+K-Means,Numerik,9,4,Silhouette Score,0.1857
