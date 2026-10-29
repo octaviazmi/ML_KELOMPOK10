@@ -1,0 +1,5 @@
+Cluster,Education,Marital_Status,Kidhome,Teenhome,Age_Group,Income_Level,Campaign_Accepted,Response
+0,Graduation,Partner,0,1,36-50,Sedang,0,0
+1,PhD,Single,0,0,<=35,Rendah,0,0
+2,Graduation,Partner,0,0,51-65,Tinggi,0,0
+3,Graduation,Partner,1,0,36-50,Rendah,0,0

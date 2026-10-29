@@ -1,0 +1,201 @@
+CustomerID,Gender,Age_Group,Income_Level,Spending_Level,Cluster
+1,Male,Muda (<=25),Rendah (<40k),Sedang (34-66),0
+2,Male,Muda (<=25),Rendah (<40k),Tinggi (67-100),0
+3,Female,Muda (<=25),Rendah (<40k),Rendah (1-33),3
+4,Female,Muda (<=25),Rendah (<40k),Tinggi (67-100),1
+5,Female,Dewasa Muda (26-35),Rendah (<40k),Sedang (34-66),1
+6,Female,Muda (<=25),Rendah (<40k),Tinggi (67-100),1
+7,Female,Dewasa Muda (26-35),Rendah (<40k),Rendah (1-33),1
+8,Female,Muda (<=25),Rendah (<40k),Tinggi (67-100),1
+9,Male,Senior (>50),Rendah (<40k),Rendah (1-33),0
+10,Female,Dewasa Muda (26-35),Rendah (<40k),Tinggi (67-100),1
+11,Male,Senior (>50),Rendah (<40k),Rendah (1-33),0
+12,Female,Dewasa Muda (26-35),Rendah (<40k),Tinggi (67-100),1
+13,Female,Senior (>50),Rendah (<40k),Rendah (1-33),3
+14,Female,Muda (<=25),Rendah (<40k),Tinggi (67-100),1
+15,Male,Dewasa (36-50),Rendah (<40k),Rendah (1-33),3
+16,Male,Muda (<=25),Rendah (<40k),Tinggi (67-100),0
+17,Female,Dewasa Muda (26-35),Rendah (<40k),Sedang (34-66),1
+18,Male,Muda (<=25),Rendah (<40k),Sedang (34-66),0
+19,Male,Senior (>50),Rendah (<40k),Rendah (1-33),0
+20,Female,Dewasa Muda (26-35),Rendah (<40k),Tinggi (67-100),1
+21,Male,Dewasa Muda (26-35),Rendah (<40k),Sedang (34-66),0
+22,Male,Muda (<=25),Rendah (<40k),Tinggi (67-100),0
+23,Female,Dewasa (36-50),Rendah (<40k),Rendah (1-33),3
+24,Male,Dewasa Muda (26-35),Rendah (<40k),Tinggi (67-100),1
+25,Female,Senior (>50),Rendah (<40k),Rendah (1-33),3
+26,Male,Dewasa Muda (26-35),Rendah (<40k),Tinggi (67-100),1
+27,Female,Dewasa (36-50),Rendah (<40k),Rendah (1-33),3
+28,Male,Dewasa Muda (26-35),Rendah (<40k),Sedang (34-66),0
+29,Female,Dewasa (36-50),Rendah (<40k),Rendah (1-33),3
+30,Female,Muda (<=25),Rendah (<40k),Tinggi (67-100),1
+31,Male,Senior (>50),Rendah (<40k),Rendah (1-33),0
+32,Female,Muda (<=25),Rendah (<40k),Tinggi (67-100),1
+33,Male,Senior (>50),Rendah (<40k),Rendah (1-33),0
+34,Male,Muda (<=25),Rendah (<40k),Tinggi (67-100),0
+35,Female,Dewasa (36-50),Rendah (<40k),Rendah (1-33),3
+36,Female,Muda (<=25),Rendah (<40k),Tinggi (67-100),1
+37,Female,Dewasa (36-50),Rendah (<40k),Rendah (1-33),3
+38,Female,Dewasa Muda (26-35),Rendah (<40k),Tinggi (67-100),1
+39,Female,Dewasa (36-50),Rendah (<40k),Rendah (1-33),3
+40,Female,Muda (<=25),Rendah (<40k),Tinggi (67-100),1
+41,Female,Senior (>50),Rendah (<40k),Sedang (34-66),0
+42,Male,Muda (<=25),Rendah (<40k),Tinggi (67-100),0
+43,Male,Dewasa (36-50),Rendah (<40k),Sedang (34-66),0
+44,Female,Dewasa Muda (26-35),Rendah (<40k),Sedang (34-66),1
+45,Female,Dewasa (36-50),Rendah (<40k),Rendah (1-33),3
+46,Female,Muda (<=25),Rendah (<40k),Sedang (34-66),2
+47,Female,Dewasa (36-50),Sedang (40-70k),Sedang (34-66),2
+48,Female,Dewasa Muda (26-35),Sedang (40-70k),Sedang (34-66),2
+49,Female,Dewasa Muda (26-35),Sedang (40-70k),Sedang (34-66),2
+50,Female,Dewasa Muda (26-35),Sedang (40-70k),Sedang (34-66),2
+51,Female,Dewasa (36-50),Sedang (40-70k),Sedang (34-66),2
+52,Male,Dewasa Muda (26-35),Sedang (40-70k),Sedang (34-66),0
+53,Female,Dewasa Muda (26-35),Sedang (40-70k),Sedang (34-66),2
+54,Male,Senior (>50),Sedang (40-70k),Sedang (34-66),0
+55,Female,Dewasa (36-50),Sedang (40-70k),Sedang (34-66),2
+56,Male,Dewasa (36-50),Sedang (40-70k),Sedang (34-66),0
+57,Female,Senior (>50),Sedang (40-70k),Sedang (34-66),0
+58,Male,Senior (>50),Sedang (40-70k),Sedang (34-66),0
+59,Female,Dewasa Muda (26-35),Sedang (40-70k),Sedang (34-66),2
+60,Male,Senior (>50),Sedang (40-70k),Sedang (34-66),0
+61,Male,Senior (>50),Sedang (40-70k),Sedang (34-66),0
+62,Male,Muda (<=25),Sedang (40-70k),Sedang (34-66),0
+63,Female,Senior (>50),Sedang (40-70k),Sedang (34-66),0
+64,Female,Senior (>50),Sedang (40-70k),Sedang (34-66),0
+65,Male,Senior (>50),Sedang (40-70k),Sedang (34-66),0
+66,Male,Muda (<=25),Sedang (40-70k),Sedang (34-66),0
+67,Female,Dewasa (36-50),Sedang (40-70k),Sedang (34-66),2
+68,Female,Senior (>50),Sedang (40-70k),Sedang (34-66),0
+69,Male,Muda (<=25),Sedang (40-70k),Sedang (34-66),0
+70,Female,Dewasa Muda (26-35),Sedang (40-70k),Sedang (34-66),2
+71,Male,Senior (>50),Sedang (40-70k),Sedang (34-66),0
+72,Female,Dewasa (36-50),Sedang (40-70k),Sedang (34-66),2
+73,Female,Senior (>50),Sedang (40-70k),Sedang (34-66),0
+74,Female,Senior (>50),Sedang (40-70k),Sedang (34-66),0
+75,Male,Senior (>50),Sedang (40-70k),Sedang (34-66),0
+76,Male,Dewasa Muda (26-35),Sedang (40-70k),Sedang (34-66),0
+77,Female,Dewasa (36-50),Sedang (40-70k),Sedang (34-66),2
+78,Male,Dewasa (36-50),Sedang (40-70k),Sedang (34-66),0
+79,Female,Muda (<=25),Sedang (40-70k),Sedang (34-66),2
+80,Female,Dewasa (36-50),Sedang (40-70k),Sedang (34-66),2
+81,Male,Senior (>50),Sedang (40-70k),Sedang (34-66),0
+82,Male,Dewasa (36-50),Sedang (40-70k),Sedang (34-66),0
+83,Male,Senior (>50),Sedang (40-70k),Sedang (34-66),0
+84,Female,Dewasa (36-50),Sedang (40-70k),Sedang (34-66),2
+85,Female,Muda (<=25),Sedang (40-70k),Sedang (34-66),2
+86,Male,Dewasa (36-50),Sedang (40-70k),Sedang (34-66),0
+87,Female,Senior (>50),Sedang (40-70k),Sedang (34-66),0
+88,Female,Muda (<=25),Sedang (40-70k),Sedang (34-66),2
+89,Female,Dewasa Muda (26-35),Sedang (40-70k),Sedang (34-66),2
+90,Female,Dewasa (36-50),Sedang (40-70k),Sedang (34-66),2
+91,Female,Senior (>50),Sedang (40-70k),Sedang (34-66),0
+92,Male,Muda (<=25),Sedang (40-70k),Sedang (34-66),0
+93,Male,Dewasa (36-50),Sedang (40-70k),Sedang (34-66),0
+94,Female,Dewasa (36-50),Sedang (40-70k),Sedang (34-66),2
+95,Female,Dewasa Muda (26-35),Sedang (40-70k),Sedang (34-66),2
+96,Male,Muda (<=25),Sedang (40-70k),Sedang (34-66),0
+97,Female,Dewasa (36-50),Sedang (40-70k),Sedang (34-66),2
+98,Female,Dewasa Muda (26-35),Sedang (40-70k),Sedang (34-66),2
+99,Male,Dewasa (36-50),Sedang (40-70k),Sedang (34-66),0
+100,Male,Muda (<=25),Sedang (40-70k),Sedang (34-66),0
+101,Female,Muda (<=25),Sedang (40-70k),Sedang (34-66),2
+102,Female,Dewasa (36-50),Sedang (40-70k),Sedang (34-66),2
+103,Male,Senior (>50),Sedang (40-70k),Sedang (34-66),0
+104,Male,Dewasa Muda (26-35),Sedang (40-70k),Sedang (34-66),0
+105,Male,Dewasa (36-50),Sedang (40-70k),Sedang (34-66),0
+106,Female,Muda (<=25),Sedang (40-70k),Sedang (34-66),2
+107,Female,Senior (>50),Sedang (40-70k),Sedang (34-66),0
+108,Male,Senior (>50),Sedang (40-70k),Sedang (34-66),0
+109,Male,Senior (>50),Sedang (40-70k),Sedang (34-66),0
+110,Male,Senior (>50),Sedang (40-70k),Sedang (34-66),0
+111,Male,Senior (>50),Sedang (40-70k),Sedang (34-66),0
+112,Female,Muda (<=25),Sedang (40-70k),Sedang (34-66),2
+113,Female,Dewasa (36-50),Sedang (40-70k),Sedang (34-66),2
+114,Male,Muda (<=25),Sedang (40-70k),Sedang (34-66),0
+115,Female,Muda (<=25),Sedang (40-70k),Sedang (34-66),2
+116,Female,Muda (<=25),Sedang (40-70k),Sedang (34-66),2
+117,Female,Senior (>50),Sedang (40-70k),Sedang (34-66),0
+118,Female,Dewasa (36-50),Sedang (40-70k),Sedang (34-66),2
+119,Female,Senior (>50),Sedang (40-70k),Sedang (34-66),0
+120,Female,Dewasa (36-50),Sedang (40-70k),Sedang (34-66),2
+121,Male,Dewasa Muda (26-35),Sedang (40-70k),Sedang (34-66),0
+122,Female,Dewasa (36-50),Sedang (40-70k),Sedang (34-66),2
+123,Female,Dewasa (36-50),Sedang (40-70k),Sedang (34-66),2
+124,Male,Dewasa (36-50),Sedang (40-70k),Tinggi (67-100),0
+125,Female,Muda (<=25),Sedang (40-70k),Rendah (1-33),2
+126,Female,Dewasa Muda (26-35),Sedang (40-70k),Tinggi (67-100),1
+127,Male,Dewasa (36-50),Tinggi (>70k),Sedang (34-66),0
+128,Male,Dewasa (36-50),Tinggi (>70k),Tinggi (67-100),1
+129,Male,Senior (>50),Tinggi (>70k),Rendah (1-33),0
+130,Male,Dewasa (36-50),Tinggi (>70k),Tinggi (67-100),1
+131,Male,Dewasa (36-50),Tinggi (>70k),Rendah (1-33),3
+132,Male,Dewasa (36-50),Tinggi (>70k),Tinggi (67-100),1
+133,Female,Muda (<=25),Tinggi (>70k),Sedang (34-66),1
+134,Female,Dewasa Muda (26-35),Tinggi (>70k),Tinggi (67-100),1
+135,Male,Muda (<=25),Tinggi (>70k),Rendah (1-33),3
+136,Female,Dewasa Muda (26-35),Tinggi (>70k),Tinggi (67-100),1
+137,Female,Dewasa (36-50),Tinggi (>70k),Rendah (1-33),3
+138,Male,Dewasa Muda (26-35),Tinggi (>70k),Tinggi (67-100),1
+139,Male,Muda (<=25),Tinggi (>70k),Rendah (1-33),3
+140,Female,Dewasa Muda (26-35),Tinggi (>70k),Tinggi (67-100),1
+141,Female,Senior (>50),Tinggi (>70k),Rendah (1-33),3
+142,Male,Dewasa Muda (26-35),Tinggi (>70k),Tinggi (67-100),1
+143,Female,Dewasa Muda (26-35),Tinggi (>70k),Sedang (34-66),1
+144,Female,Dewasa Muda (26-35),Tinggi (>70k),Tinggi (67-100),1
+145,Male,Muda (<=25),Tinggi (>70k),Rendah (1-33),3
+146,Male,Dewasa Muda (26-35),Tinggi (>70k),Tinggi (67-100),1
+147,Male,Dewasa (36-50),Tinggi (>70k),Sedang (34-66),0
+148,Female,Dewasa Muda (26-35),Tinggi (>70k),Tinggi (67-100),1
+149,Female,Dewasa Muda (26-35),Tinggi (>70k),Rendah (1-33),1
+150,Male,Dewasa Muda (26-35),Tinggi (>70k),Tinggi (67-100),1
+151,Male,Dewasa (36-50),Tinggi (>70k),Rendah (1-33),3
+152,Male,Dewasa (36-50),Tinggi (>70k),Tinggi (67-100),1
+153,Female,Dewasa (36-50),Tinggi (>70k),Rendah (1-33),3
+154,Female,Dewasa (36-50),Tinggi (>70k),Tinggi (67-100),1
+155,Female,Dewasa (36-50),Tinggi (>70k),Rendah (1-33),3
+156,Female,Dewasa Muda (26-35),Tinggi (>70k),Tinggi (67-100),1
+157,Male,Dewasa (36-50),Tinggi (>70k),Rendah (1-33),3
+158,Female,Dewasa Muda (26-35),Tinggi (>70k),Tinggi (67-100),1
+159,Male,Dewasa Muda (26-35),Tinggi (>70k),Rendah (1-33),1
+160,Female,Dewasa Muda (26-35),Tinggi (>70k),Tinggi (67-100),1
+161,Female,Senior (>50),Tinggi (>70k),Sedang (34-66),0
+162,Female,Dewasa Muda (26-35),Tinggi (>70k),Tinggi (67-100),1
+163,Male,Muda (<=25),Tinggi (>70k),Rendah (1-33),3
+164,Female,Dewasa Muda (26-35),Tinggi (>70k),Tinggi (67-100),1
+165,Male,Dewasa (36-50),Tinggi (>70k),Rendah (1-33),3
+166,Female,Dewasa (36-50),Tinggi (>70k),Tinggi (67-100),1
+167,Male,Dewasa (36-50),Tinggi (>70k),Rendah (1-33),3
+168,Female,Dewasa Muda (26-35),Tinggi (>70k),Tinggi (67-100),1
+169,Female,Dewasa (36-50),Tinggi (>70k),Rendah (1-33),3
+170,Male,Dewasa Muda (26-35),Tinggi (>70k),Sedang (34-66),0
+171,Male,Dewasa (36-50),Tinggi (>70k),Rendah (1-33),3
+172,Male,Dewasa Muda (26-35),Tinggi (>70k),Tinggi (67-100),1
+173,Male,Dewasa (36-50),Tinggi (>70k),Rendah (1-33),3
+174,Male,Dewasa (36-50),Tinggi (>70k),Tinggi (67-100),1
+175,Female,Senior (>50),Tinggi (>70k),Rendah (1-33),3
+176,Female,Dewasa Muda (26-35),Tinggi (>70k),Tinggi (67-100),1
+177,Male,Senior (>50),Tinggi (>70k),Rendah (1-33),0
+178,Male,Dewasa Muda (26-35),Tinggi (>70k),Tinggi (67-100),1
+179,Male,Senior (>50),Tinggi (>70k),Rendah (1-33),0
+180,Male,Dewasa Muda (26-35),Tinggi (>70k),Tinggi (67-100),1
+181,Female,Dewasa (36-50),Tinggi (>70k),Rendah (1-33),3
+182,Female,Dewasa Muda (26-35),Tinggi (>70k),Tinggi (67-100),1
+183,Male,Dewasa (36-50),Tinggi (>70k),Rendah (1-33),3
+184,Female,Dewasa Muda (26-35),Tinggi (>70k),Tinggi (67-100),1
+185,Female,Dewasa (36-50),Tinggi (>70k),Sedang (34-66),2
+186,Male,Dewasa Muda (26-35),Tinggi (>70k),Tinggi (67-100),1
+187,Female,Senior (>50),Tinggi (>70k),Rendah (1-33),3
+188,Male,Dewasa Muda (26-35),Tinggi (>70k),Tinggi (67-100),1
+189,Female,Dewasa (36-50),Tinggi (>70k),Rendah (1-33),3
+190,Female,Dewasa (36-50),Tinggi (>70k),Tinggi (67-100),1
+191,Female,Dewasa Muda (26-35),Tinggi (>70k),Rendah (1-33),1
+192,Female,Dewasa Muda (26-35),Tinggi (>70k),Tinggi (67-100),1
+193,Male,Dewasa Muda (26-35),Tinggi (>70k),Rendah (1-33),1
+194,Female,Dewasa (36-50),Tinggi (>70k),Tinggi (67-100),1
+195,Female,Dewasa (36-50),Tinggi (>70k),Rendah (1-33),3
+196,Female,Dewasa Muda (26-35),Tinggi (>70k),Tinggi (67-100),1
+197,Female,Dewasa (36-50),Tinggi (>70k),Rendah (1-33),3
+198,Male,Dewasa Muda (26-35),Tinggi (>70k),Tinggi (67-100),1
+199,Male,Dewasa Muda (26-35),Tinggi (>70k),Rendah (1-33),1
+200,Male,Dewasa Muda (26-35),Tinggi (>70k),Tinggi (67-100),1

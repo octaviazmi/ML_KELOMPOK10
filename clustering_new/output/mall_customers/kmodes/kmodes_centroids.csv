@@ -1,0 +1,5 @@
+Cluster,Gender,Age_Group,Income_Level,Spending_Level
+0,Male,Senior (>50),Sedang (40-70k),Sedang (34-66)
+1,Female,Dewasa Muda (26-35),Tinggi (>70k),Tinggi (67-100)
+2,Female,Dewasa (36-50),Sedang (40-70k),Sedang (34-66)
+3,Female,Dewasa (36-50),Tinggi (>70k),Rendah (1-33)
