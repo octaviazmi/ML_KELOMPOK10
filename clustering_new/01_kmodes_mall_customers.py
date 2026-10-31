@@ -11,24 +11,24 @@ from pathlib import Path
 
 import matplotlib
 
-matplotlib.use("Agg")  
+matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import pandas as pd
 import seaborn as sns
 from kmodes.kmodes import KModes
 
-# ----------------------------------------------------------------------------
-# PARAMETER (nanti yeaahhhhh)
-# ----------------------------------------------------------------------------
+K_RANGE = range(2, 11)
+FINAL_K = 4
+INIT_METHOD = "Huang"    # "Huang" atau "Cao"
+N_INIT = 10
+RANDOM_STATE = 42
+SHOW_PLOTS = False
 
-
-# ----------------------------------------------------------------------------
-# PATH 
-# ----------------------------------------------------------------------------
 BASE_DIR = Path(__file__).resolve().parent
 DATA_PATH = BASE_DIR / "data" / "Mall_Customers.csv"
 OUT_DIR = BASE_DIR / "output" / "mall_customers" / "kmodes"
-OUT_DIR.mkdir(parents=True, exist_ok=True)  
+OUT_DIR.mkdir(parents=True, exist_ok=True)
+
 sns.set_theme(style="whitegrid")
 
 
@@ -38,11 +38,8 @@ def judul(teks):
     print("=" * 70)
 
 
-# ----------------------------------------------------------------------------
-# 1. BACA DATA & PERIKSA STRUKTUR
-# ----------------------------------------------------------------------------
 judul("1. STRUKTUR DATA")
-df = pd.read_csv(DATA_PATH)  # dataset asli tidak diubah
+df = pd.read_csv(DATA_PATH)
 print(f"Jumlah baris, kolom : {df.shape}")
 print("\nTipe data:")
 print(df.dtypes)
@@ -55,29 +52,25 @@ print(missing)
 print(f"\nTotal missing values: {int(missing.sum())}")
 print(f"Baris duplikat      : {int(df.duplicated().sum())}")
 
-# ----------------------------------------------------------------------------
-# 3. PILIH FITUR & KATEGORISASI
-# ----------------------------------------------------------------------------
+# K-Modes butuh data kategorikal: Age, Income, dan Spending Score
+# didiskretisasi menjadi kategori ordinal. CustomerID tidak dipakai.
 judul("3. KATEGORISASI FITUR NUMERIK")
 
 data_cat = pd.DataFrame(index=df.index)
 data_cat["Gender"] = df["Gender"].astype(str)
 
-# Usia: Muda (<=25), Dewasa Muda (26-35), Dewasa (36-50), Senior (>50)
 data_cat["Age_Group"] = pd.cut(
     df["Age"],
     bins=[0, 25, 35, 50, 200],
     labels=["Muda (<=25)", "Dewasa Muda (26-35)", "Dewasa (36-50)", "Senior (>50)"],
 ).astype(str)
 
-# Pendapatan tahunan (k$): Rendah (<40), Sedang (40-70), Tinggi (>70)
 data_cat["Income_Level"] = pd.cut(
     df["Annual Income (k$)"],
     bins=[0, 39, 70, 1000],
     labels=["Rendah (<40k)", "Sedang (40-70k)", "Tinggi (>70k)"],
 ).astype(str)
 
-# Skor belanja (1-100): Rendah (1-33), Sedang (34-66), Tinggi (67-100)
 data_cat["Spending_Level"] = pd.cut(
     df["Spending Score (1-100)"],
     bins=[0, 33, 66, 100],
@@ -90,9 +83,6 @@ for col in FEATURES:
     print(f"\n{col}:")
     print(data_cat[col].value_counts())
 
-# ----------------------------------------------------------------------------
-# 4. K-MODES UNTUK BEBERAPA KANDIDAT K -> HITUNG COST
-# ----------------------------------------------------------------------------
 judul("4. COST K-MODES UNTUK k = %d..%d" % (min(K_RANGE), max(K_RANGE)))
 X = data_cat[FEATURES].values
 
@@ -127,9 +117,6 @@ if SHOW_PLOTS:
     plt.show()
 plt.close(fig)
 
-# ----------------------------------------------------------------------------
-# 5. MODEL FINAL
-# ----------------------------------------------------------------------------
 judul(f"5. MODEL FINAL (k = {FINAL_K})")
 km_final = KModes(
     n_clusters=FINAL_K,
@@ -171,9 +158,6 @@ centroids.to_csv(OUT_DIR / "kmodes_centroids.csv", index=False)
 print("\nCentroid (modus) tiap cluster:")
 print(centroids.to_string(index=False))
 
-# ----------------------------------------------------------------------------
-# 6. PROFIL KATEGORI TIAP CLUSTER
-# ----------------------------------------------------------------------------
 judul("6. PROFIL KATEGORI TIAP CLUSTER")
 profile_rows = []
 for col in FEATURES:
@@ -202,9 +186,6 @@ num_summary = (
 num_summary.to_csv(OUT_DIR / "kmodes_cluster_numeric_summary.csv")
 print(num_summary)
 
-# ----------------------------------------------------------------------------
-# 7. GRAFIK DISTRIBUSI CLUSTER
-# ----------------------------------------------------------------------------
 # (a) jumlah anggota per cluster
 fig, ax = plt.subplots(figsize=(7, 5))
 sns.barplot(data=sizes, x="Cluster", y="Jumlah_Anggota", hue="Cluster",
