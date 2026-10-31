@@ -29,9 +29,7 @@ from sklearn.metrics import (
 warnings.filterwarnings("ignore")
 np.random.seed(42)
 
-# ------------------------------------------------------------
 # 1. KONFIGURASI
-# ------------------------------------------------------------
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 DATA_PATH = os.path.join(BASE_DIR, "data", "marketing_campaign.csv")
 OUTPUT_DIR = os.path.join(BASE_DIR, "output", "marketing_campaign", "dbscan")
@@ -72,9 +70,7 @@ def judul(teks):
     print("=" * 65)
 
 
-# ------------------------------------------------------------
 # 2. MEMUAT DAN MEMERIKSA DATA
-# ------------------------------------------------------------
 judul("DBSCAN - MARKETING CAMPAIGN")
 
 if not os.path.exists(DATA_PATH):
@@ -92,9 +88,7 @@ missing_features = [c for c in FEATURES if c not in df.columns]
 if missing_features:
     raise ValueError(f"Kolom berikut tidak ditemukan dalam dataset: {missing_features}")
 
-# ------------------------------------------------------------
 # 3. PREPROCESSING
-# ------------------------------------------------------------
 judul("PREPROCESSING")
 
 data = df[FEATURES].copy()
@@ -118,9 +112,7 @@ print("Fitur di-scaling dengan StandardScaler agar DBSCAN (berbasis jarak")
 print("Euclidean) tidak didominasi fitur dengan rentang nilai terbesar")
 print("(mis. MntWines puluhan-ribuan vs NumWebVisitsMonth 0-20).")
 
-# ------------------------------------------------------------
 # 4. K-DISTANCE GRAPH UNTUK MEMPERKIRAKAN EPS
-# ------------------------------------------------------------
 judul("K-DISTANCE GRAPH (ESTIMASI EPS)")
 
 K_FOR_KDIST = 26  # ~ 2 x jumlah fitur, acuan awal min_samples
@@ -138,9 +130,7 @@ fig.savefig(os.path.join(OUTPUT_DIR, "dbscan_kdistance_graph.png"), dpi=150)
 plt.close(fig)
 print(f"Grafik k-distance (k={K_FOR_KDIST}) disimpan sebagai perkiraan awal eps.")
 
-# ------------------------------------------------------------
 # 5. GRID SEARCH EPS & MIN_SAMPLES
-# ------------------------------------------------------------
 judul("PENGUJIAN KOMBINASI eps DAN min_samples")
 
 grid_rows = []
@@ -186,9 +176,7 @@ print(
     .to_string(index=False)
 )
 
-# ------------------------------------------------------------
 # 6. MEMILIH PARAMETER FINAL
-# ------------------------------------------------------------
 judul("PARAMETER FINAL")
 
 valid = grid_df.dropna(subset=["silhouette"])
@@ -216,9 +204,7 @@ else:
     print(f"Dipakai kombinasi dengan jumlah cluster terbanyak sebagai fallback: "
           f"eps={FINAL_EPS}, min_samples={FINAL_MIN_SAMPLES}")
 
-# ------------------------------------------------------------
 # 7. MODEL FINAL
-# ------------------------------------------------------------
 judul("MODEL FINAL DBSCAN")
 
 dbscan_final = DBSCAN(eps=FINAL_EPS, min_samples=FINAL_MIN_SAMPLES)
@@ -252,9 +238,7 @@ print(sizes.to_string(index=False))
 label_cols = (["ID"] if "ID" in result.columns else []) + ["Cluster"]
 result[label_cols].to_csv(os.path.join(OUTPUT_DIR, "dbscan_cluster_labels.csv"), index=False)
 
-# ------------------------------------------------------------
 # 8. EVALUASI METRIK (titik noise dikeluarkan)
-# ------------------------------------------------------------
 judul("EVALUASI METRIK")
 
 mask = labels != -1
@@ -270,9 +254,7 @@ else:
     sil = dbi = ch = np.nan
     print("Cluster valid kurang dari 2, metrik evaluasi tidak dapat dihitung.")
 
-# ------------------------------------------------------------
 # 9. PROFIL CLUSTER
-# ------------------------------------------------------------
 judul("PROFIL CLUSTER")
 
 profile = result.groupby("Cluster")[FEATURES].mean().round(2)
@@ -280,9 +262,7 @@ profile.to_csv(os.path.join(OUTPUT_DIR, "dbscan_cluster_profile.csv"))
 print("Rata-rata fitur per cluster (Cluster -1 = noise):")
 print(profile.to_string())
 
-# ------------------------------------------------------------
 # 10. VISUALISASI (reduksi ke 2D dengan PCA karena 13 fitur)
-# ------------------------------------------------------------
 judul("VISUALISASI (PCA 2D)")
 
 pca = PCA(n_components=2, random_state=RANDOM_STATE)

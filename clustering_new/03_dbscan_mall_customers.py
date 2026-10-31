@@ -27,9 +27,7 @@ from sklearn.metrics import (
 warnings.filterwarnings("ignore")
 np.random.seed(42)
 
-# ------------------------------------------------------------
 # 1. KONFIGURASI
-# ------------------------------------------------------------
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 DATA_PATH = os.path.join(BASE_DIR, "data", "Mall_Customers.csv")
 OUTPUT_DIR = os.path.join(BASE_DIR, "output", "mall_customers", "dbscan")
@@ -56,9 +54,7 @@ def judul(teks):
     print("=" * 65)
 
 
-# ------------------------------------------------------------
 # 2. MEMUAT DAN MEMERIKSA DATA
-# ------------------------------------------------------------
 judul("DBSCAN - MALL CUSTOMERS")
 
 df = pd.read_csv(DATA_PATH)
@@ -72,9 +68,7 @@ print(df.head())
 print("\nMissing values:")
 print(df.isnull().sum())
 
-# ------------------------------------------------------------
 # 3. PREPROCESSING
-# ------------------------------------------------------------
 judul("PREPROCESSING")
 
 data = df[FEATURES].copy()
@@ -93,9 +87,7 @@ print("(Euclidean), sehingga satuan Income (puluhan ribu) dan Spending")
 print("Score (1-100) harus disamakan rentangnya dulu.")
 print("Jumlah data:", X_scaled.shape[0])
 
-# ------------------------------------------------------------
 # 4. K-DISTANCE GRAPH UNTUK MEMPERKIRAKAN EPS
-# ------------------------------------------------------------
 judul("K-DISTANCE GRAPH (ESTIMASI EPS)")
 
 K_FOR_KDIST = 5  # = calon min_samples yang umum dipakai sebagai acuan awal
@@ -116,9 +108,7 @@ print(f"Grafik k-distance (k={K_FOR_KDIST}) disimpan.")
 print("Titik 'tekuk' (knee) pada grafik ini jadi perkiraan awal nilai eps;")
 print("nilai pasti tetap ditentukan lewat grid search di langkah berikut.")
 
-# ------------------------------------------------------------
 # 5. GRID SEARCH EPS & MIN_SAMPLES
-# ------------------------------------------------------------
 judul("PENGUJIAN KOMBINASI eps DAN min_samples")
 
 grid_rows = []
@@ -162,9 +152,7 @@ print(
     .to_string(index=False)
 )
 
-# ------------------------------------------------------------
 # 6. MEMILIH PARAMETER FINAL
-# ------------------------------------------------------------
 judul("PARAMETER FINAL")
 
 valid = grid_df.dropna(subset=["silhouette"])
@@ -186,9 +174,7 @@ print(f"Alasan: kombinasi ini memberi Silhouette Score tertinggi "
       f"sehingga hasil cluster cukup bermakna untuk diinterpretasikan "
       f"dan tidak didominasi oleh titik yang dibuang sebagai noise.")
 
-# ------------------------------------------------------------
 # 7. MODEL FINAL
-# ------------------------------------------------------------
 judul("MODEL FINAL DBSCAN")
 
 dbscan_final = DBSCAN(eps=FINAL_EPS, min_samples=FINAL_MIN_SAMPLES)
@@ -221,9 +207,7 @@ result[["CustomerID", "Cluster"]].to_csv(
     os.path.join(OUTPUT_DIR, "dbscan_cluster_labels.csv"), index=False
 )
 
-# ------------------------------------------------------------
 # 8. EVALUASI METRIK (titik noise dikeluarkan)
-# ------------------------------------------------------------
 judul("EVALUASI METRIK")
 
 mask = labels != -1
@@ -240,9 +224,7 @@ else:
     sil = dbi = ch = np.nan
     print("Cluster valid kurang dari 2, metrik evaluasi tidak dapat dihitung.")
 
-# ------------------------------------------------------------
 # 9. PROFIL CLUSTER
-# ------------------------------------------------------------
 judul("PROFIL CLUSTER")
 
 profile = result.groupby("Cluster")[FEATURES + ["Age"]].mean().round(2)
@@ -250,9 +232,7 @@ profile.to_csv(os.path.join(OUTPUT_DIR, "dbscan_cluster_profile.csv"))
 print("Rata-rata fitur per cluster (Cluster -1 = noise):")
 print(profile.to_string())
 
-# ------------------------------------------------------------
 # 10. VISUALISASI
-# ------------------------------------------------------------
 judul("VISUALISASI")
 
 fig, ax = plt.subplots(figsize=(8, 6))
@@ -282,9 +262,7 @@ fig.tight_layout()
 fig.savefig(os.path.join(OUTPUT_DIR, "dbscan_cluster_distribution.png"), dpi=150)
 plt.close(fig)
 
-# ------------------------------------------------------------
 # 11. PERBANDINGAN DENGAN K-MEANS
-# ------------------------------------------------------------
 judul("PERBANDINGAN DENGAN K-MEANS")
 
 kmeans_scores = []
