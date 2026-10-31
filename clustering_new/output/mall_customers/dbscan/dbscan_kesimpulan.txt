@@ -1,0 +1,1 @@
+K-Means (Silhouette 0.5547) LEBIH BAIK dari DBSCAN (Silhouette 0.5490) pada dataset ini. Pada data dengan kerapatan antar cluster yang cukup merata seperti Mall Customers, K-Means yang mengasumsikan cluster berbentuk bulat cenderung lebih cocok dibanding DBSCAN yang mengandalkan perbedaan kerapatan.

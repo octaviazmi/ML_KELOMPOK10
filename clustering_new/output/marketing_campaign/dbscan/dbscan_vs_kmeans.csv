@@ -1,0 +1,3 @@
+Metode,Jumlah cluster,Silhouette Score,Davies-Bouldin Index,Calinski-Harabasz,Noise
+K-Means (baseline),2,0.3617,1.2844,1168.0,-
+DBSCAN,2,0.3936,0.8993,72.4,653 (29.2%)

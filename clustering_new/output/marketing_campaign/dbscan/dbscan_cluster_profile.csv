@@ -1,0 +1,4 @@
+Cluster,Income,Recency,MntWines,MntFruits,MntMeatProducts,MntFishProducts,MntSweetProducts,MntGoldProds,NumDealsPurchases,NumWebPurchases,NumCatalogPurchases,NumStorePurchases,NumWebVisitsMonth
+-1,73563.71,49.59,616.39,64.6,397.35,91.62,67.06,87.17,2.08,5.6,5.68,8.23,3.83
+0,43030.32,48.95,168.95,10.05,64.71,14.62,10.11,26.14,2.45,3.45,1.36,4.74,5.98
+1,77372.75,45.75,678.4,49.4,655.1,65.95,49.7,36.1,1.0,4.25,6.3,8.6,1.85
