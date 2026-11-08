@@ -1,0 +1,61 @@
+{
+  "model": "LightGBM",
+  "train_metrics": {
+    "MAE": 33990.38018190563,
+    "MAPE": 7.777280718931803,
+    "RMSE": 52556.582905098934,
+    "MSE": 2762194406.6605372,
+    "R2": 0.9788578360892799
+  },
+  "test_metrics": {
+    "MAE": 66603.27401616593,
+    "MAPE": 12.111688844192868,
+    "RMSE": 140754.07511888084,
+    "MSE": 19811709662.571552,
+    "R2": 0.8689499899368727
+  },
+  "training_time_seconds": 2.186,
+  "n_train": 17290,
+  "n_test": 4323,
+  "features": [
+    "bedrooms",
+    "bathrooms",
+    "sqft_living",
+    "sqft_lot",
+    "floors",
+    "waterfront",
+    "view",
+    "condition",
+    "grade",
+    "sqft_above",
+    "sqft_basement",
+    "yr_built",
+    "yr_renovated",
+    "zipcode",
+    "lat",
+    "long",
+    "sqft_living15",
+    "sqft_lot15"
+  ],
+  "params": {
+    "boosting_type": "gbdt",
+    "colsample_bytree": 0.8,
+    "importance_type": "split",
+    "learning_rate": 0.05,
+    "max_depth": -1,
+    "min_child_samples": 20,
+    "min_child_weight": 0.001,
+    "min_split_gain": 0.0,
+    "n_estimators": 600,
+    "n_jobs": -1,
+    "num_leaves": 63,
+    "objective": "regression",
+    "random_state": 42,
+    "reg_alpha": 0.1,
+    "reg_lambda": 1.0,
+    "subsample": 0.8,
+    "subsample_for_bin": 200000,
+    "subsample_freq": 0,
+    "verbose": -1
+  }
+}
